@@ -25,19 +25,23 @@ int main() {
     cout << "How long was your call?: ";
     cin >> lengthCall;
 
-    // turn time into an int cus im lazy
+    // turn time into an int
     getTime.erase(remove(getTime.begin(), getTime.end(), ':'), getTime.end());
     cout << getTime << endl;
     int time = stoi(getTime);
 
     float price;
+    // if it is not a weekend day:
     if (!(day == "sa" || day == "su")) {
       if (800 <= time && time <= 1800) {
+        // if its the daytime use this price model:
         price = lengthCall * 0.4;
       } else {
+        // else, its the nighttime so we use this model
         price = lengthCall * 0.25;
       }
     } else {
+      // use this price model for all weekend vals
       price = lengthCall * 0.15;
     }
     cout << "Your call cost: $" << price << ", it was on " << tempDay << " at "

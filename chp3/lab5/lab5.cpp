@@ -14,21 +14,29 @@ public:
     // first calculate miami's pricing, then change it price if its colorado or
     // miami since the prices are based on miami pricing
     if (week == 'w') {
+      // during the week
       if (500 <= time && time <= 1900) {
+        // during the day
         price = 150;
       } else {
+        // during the night
         price = 100;
       }
     } else {
+      // during the weekend
       if (500 <= time && time <= 1900) {
+        // durign the day on weekened
         price = 180;
       } else {
+        // during the night
         price = 120;
       }
     }
     if (destination == 'c') {
+      // if its chicago you just half the price
       price = price * 0.5;
     } else if (destination == 'p') {
+      // if portland you just double it
       price = price * 2;
     }
     return price;
@@ -62,9 +70,7 @@ public:
   }
 };
 
-// everything for the main function, I thought it was a repeated lab, but since
-// its not this could just be the main function instead.
-void userPrompt() {
+int main() {
   cout << "Welcome to Fordham Airlines!" << endl;
 
   cout << "What is your destination? ([C]hicago, [M]iami, [P]ortland)";
@@ -89,9 +95,5 @@ void userPrompt() {
   cin >> quantity;
 
   Flight.priceForFlight(quantity);
-}
-
-int main() {
-  userPrompt();
   return 0;
 }
