@@ -39,6 +39,7 @@ public:
       // if portland you just double it
       price = price * 2;
     }
+    // (techincally else) you just return miami's price
     return price;
   }
 
@@ -73,7 +74,7 @@ public:
 int main() {
   cout << "Welcome to Fordham Airlines!" << endl;
 
-  cout << "What is your destination? ([C]hicago, [M]iami, [P]ortland)";
+  cout << "What is your destination? ([C]hicago, [M]iami, [P]ortland): ";
   char destination;
   cin >> destination;
   destination = tolower(destination);
@@ -93,6 +94,11 @@ int main() {
   cout << "How many tickets do you need?: ";
   int quantity;
   cin >> quantity;
+  while (quantity < 0) {
+    cout << "The number of tickets ordered is invalid, please come back later."
+         << endl;
+    return 0;
+  }
 
   Flight.priceForFlight(quantity);
   return 0;

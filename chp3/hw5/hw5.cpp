@@ -15,8 +15,7 @@ int main() {
     transform(day.begin(), day.end(), day.begin(),
               [](unsigned char c) { return tolower(c); });
 
-    cout << day << endl;
-
+    // get inputs
     string getTime;
     cout << "What time did you start the call?: ";
     cin >> getTime;
@@ -27,7 +26,6 @@ int main() {
 
     // turn time into an int
     getTime.erase(remove(getTime.begin(), getTime.end(), ':'), getTime.end());
-    cout << getTime << endl;
     int time = stoi(getTime);
 
     float price;
@@ -54,4 +52,5 @@ int main() {
       runningLoop = false;
     }
   }
+  return 0;
 }
