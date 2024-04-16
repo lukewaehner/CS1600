@@ -1,3 +1,5 @@
+// Luke Waehner
+// Midterm 1
 #include <iostream>
 
 using namespace std;
