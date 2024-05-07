@@ -4,7 +4,7 @@ using namespace std;
 
 void computeCoins(int &num) {
   unordered_map<string, int> coins = {
-      {"Pennis", 1}, {"Nickels", 5}, {"Dimes", 10}, {"Quarters", 25}};
+      {"Pennis", 1}, {"Dimes", 10}, {"Quarters", 25}};
 
   for (const pair<const string, int> &c : coins) {
     cout << c.first << ": " << int(num / c.second) << endl;
